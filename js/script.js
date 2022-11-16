@@ -163,6 +163,6 @@ const app = new Vue ({
             }
             ],
             }
-            ]
+        ]
     }
 });
