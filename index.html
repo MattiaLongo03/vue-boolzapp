@@ -5,14 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.13/dist/vue.js" defer></script> 
+
     <!-- Script -->
     <script src="js/script.js" defer></script>
 
-    <!-- Vue -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.13/dist/vue.js" defer></script>
-
     <!-- css -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,6 +34,71 @@
     </div>
 
     <div class="container">
+        <div class="sinistra">
+            <div class="utente">
+                <div class="utente-info">
+                    <img src="img/avatar_7.jpg">
+                    <h4>Mattia</h4>
+                </div>
+                <div class="icone-utente">
+                    <i class="fa-solid fa-circle-notch"></i>
+                    <i class="fa-solid fa-message"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+            </div>
+            <div class="notifiche">
+                <div class="campanella-notifiche">
+                    <i class="fa-solid fa-bell-slash"></i>
+                </div>
+                <div class="testo-notifiche">
+                    <h4>Ricevi notifiche di nuovi messaggi</h4>
+                    <a href="#">Attiva notifiche dekstop</a>
+                </div>
+            </div>
+            <div class="ricerca">
+                <button class="btn-ricerca"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <input type="text"  v-model='nome_filtrato' class="barra-ricerca">
+            </div>
+            <div class="lista">
+                <div v-for="(contact, i) in contacts" class="lista-contatti" :class="{utenti: contact.utenti}" @click="selezioneChat(i)">
+                    <img :src="'img/avatar' + contact.avatar + '.jpg'" class="foto-contatti">
+                    <div class="info-contatti">
+                        <h4 class="nome-contatto">{{ contact.name }}</h4>
+                        <div class="contatto-ultimo-messaggio">{{ contact.messages[contact.messages.length - 1].message }}</div>
+                    </div>
+                    <span class="ora-ultimo-messaggio">12:00</span>
+                </div>
+            </div>
+        </div>
+        <div class="destra">
+            <div class="destinatario">
+                <div class="info-destinatario">
+                    <img :src="'img/avatar' + contacts[chat].avatar + '.jpg' ">
+                    <div class="info-testo-destinatario">
+                        <h4>{{ contacts[chat].name }}</h4>
+                        <span>Ultimo accesso alle ore 12:00</span>
+                    </div>
+                </div>
+                <div class="icone-utente">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-solid fa-paperclip"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+            </div>
+            <div class="chat">
+                <div v-for="msg in contacts[chat].messages" class="messaggi">
+                    <div :class="{invioMessaggio: msg.status === 'inviato', ricezioneMessaggio: msg.status === 'ricevuto'}">
+                        <span class="testo-messaggio">{{ msg.message }}</span>
+                        <span class="ora-messaggio">12:00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="invio">
+                <i class="fa-regular fa-face-smile"></i>
+                <input type="text" class="input-invio" placeholder="Scrivi un messaggio" v-model="nuovo_messaggio" @keyup.enter="invioMessaggio">
+                <i class="fa-solid fa-microphone"></i>          
+            </div>
+        </div>
     </div>
 </body>
 </html>

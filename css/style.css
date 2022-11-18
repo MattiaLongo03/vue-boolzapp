@@ -1,31 +1,236 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
- .background-top {
-    background-color: #009688;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    height: 150px;
-    width: 100%;
+.background-top {
+  height: 150px;
+  width: 100%;
+  background-color: #009688;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
   }
   
-  .background-bottom {
-    background-color: #D9DBD4;
-    position: fixed;
-    top: 150px;
-    left: 0;
-    z-index: -1;
-    height: calc(100% - 150px);
-    width: 100%;
-  }
+.background-bottom {
+  width: 100%;
+  height: calc(100% - 150px);
+  background-color: #D9DBD4;
+  position: fixed;
+  top: 150px;
+  left: 0;
+  z-index: -1;
+}
   
-  .container {
-    margin: 0 auto;
-    width: 80%;
-  }
+.container {
+  width: 1500px;
+  height: 870px;
+  background-color: white;
+  position: absolute;
+  top: 50px;
+  left: 250px;
+  display: flex;
+}
+
+.sinistra{
+  width: 500px;
+  height: 850px;
+}
+
+.destra{
+  width: 1000px;
+  border-left: 1px solid #b1b1b1;
+}
+
+.utente{
+  padding-left: 5px;
+  height: 90px;
+  background-color: #eaeaea;
+  display: flex;
+  justify-content: space-between;
+}
+
+.utente-info{
+  display: flex;
+  align-items: center;
+}
+
+.utente-info img{
+  height: 65px;
+  border-radius: 50%;
+}
+
+.icone-utente{
+  display: flex;
+  align-items: center;
+}
+
+.icone-utente i{
+  font-size: 20px;
+  margin-right: 30px;
+  color: #b1b1b1;
+}
+
+.notifiche{
+  height: 100px;
+  background-color: #8edafc;
+  display: flex;
+  align-items: center;
+}
+
+.campanella-notifiche{
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.campanella-notifiche i{
+  color: lightblue;
+  font-size: 20px;
+}
+
+.ricerca{
+  height: 40px;
+  background-color: #eaeaea;
+  display: flex;
+  align-items: center;
+}
+
+.btn-ricerca{
+  margin: 0 10px;
+  width: 50px;
+  height: 24px;
+  background-color: white;
+  border: none;
+}
+
+.barra-ricerca{
+  margin: 0 10px;
+  width: 425px;
+  height: 24px;
+  background-color: white;
+  border: none;
+
+}
+
+.lista{
+  height: 650px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+
+}
+.lista-contatti{
+  height: 80px;
+  align-items: center;
+  border-bottom: 1px solid #eaeaea;
+  position: relative;
+  cursor: pointer;
+  display: none;
+}
+
+.utenti{
+  display: flex;
+}
+
+.foto-contatti{
+  margin: 0 10px;
+  border-radius: 50%;
+  height: 60px;
+}
+
+.ora-ultimo-messaggio{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #6994a3;
+}
+
+.destinatario{
+  padding: 0 5px;
+  height: 70px;
+  background-color: #eaeaea;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-destinatario{
+  display: flex;
+  align-items: center;
+}
+
+.info-destinatario img{
+  border-radius: 50%;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.info-testo-destinatario span{
+  color: #6994a3;
+}
+
+.chat{
+  height: 749px;
+  background-color: #e3dcd3;
+  overflow-y: scroll;
+}
+
+.messaggi{
+  margin: 20px 0;
+}
+
+.invioMessaggio{
+  margin: 0 10px 0 auto;
+  padding: 10px 10px 5px 10px;
+  background-color: #d5f9ba;
+  width: fit-content;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ricezioneMessaggio{
+  margin: 0 auto 0 20px;
+  padding: 10px 10px 5px 10px;
+  width: fit-content;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ora-messaggio{
+  margin-left: 80px;
+  font-size: 15px;
+  color: #6994a3;
+  align-self: flex-end; 
+}
+
+.invio{
+  padding: 0 10px;
+  height: 61px;
+  background-color: #f3eeea;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.invio i{
+  font-size: 30px;
+  color: #6b747a;
+}
+
+.input-invio{
+  width: 850px;
+  height: 40px;
+  background-color: white;
+  border-radius: 5px;
+}
